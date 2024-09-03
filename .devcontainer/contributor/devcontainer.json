@@ -20,6 +20,10 @@
             "version": "latest",
             "moby": true
         },
+        "ghcr.io/devcontainers/features/azure-cli:1": {},
+        "ghcr.io/rocker-org/devcontainer-features/apt-packages:1": {
+            "packages": "uuid-runtime"
+        },
         //Tools
         "ghcr.io/eitsupi/devcontainer-features/jq-likes:2": {},
         "ghcr.io/mpriscella/features/kind:1": {},
