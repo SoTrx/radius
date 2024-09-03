@@ -6,8 +6,10 @@ param adminUsername string
 @secure()
 param adminPassword string
 
+var seed = substring(uniqueString(resourceGroup().id), 0, 5)
+
 resource account 'Microsoft.DocumentDB/databaseAccounts@2020-04-01' = {
-  name: 'account-radiustest'
+  name: 'account-radiustest-${seed}'
   location: location
   kind: 'MongoDB'
   tags: {
@@ -29,7 +31,7 @@ resource account 'Microsoft.DocumentDB/databaseAccounts@2020-04-01' = {
 }
 
 resource server 'Microsoft.Sql/servers@2021-02-01-preview' = {
-  name: 'mssql-radiustest'
+  name: 'mssql-radiustest-${seed}'
   location: location
   tags: {
     radiustest: 'corerp-resources-microsoft-sql'
