@@ -134,6 +134,7 @@ func Test_Process(t *testing.T) {
 				},
 				Type:    "secretstores.kubernetes",
 				Version: "v1",
+				Scopes:  []string{"test-scope-1"},
 			},
 		}
 
@@ -174,6 +175,7 @@ func Test_Process(t *testing.T) {
 						},
 					},
 				},
+				"scopes": []any{"test-scope-1"},
 			},
 		}
 

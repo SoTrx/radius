@@ -222,6 +222,50 @@ func Test_Process(t *testing.T) {
 					},
 				},
 			},
+			{
+				description: "Scoped",
+				properties: &datamodel.DaprStateStoreProperties{
+					BasicResourceProperties: rpv1.BasicResourceProperties{
+						Application: applicationID,
+					},
+					BasicDaprResourceProperties: rpv1.BasicDaprResourceProperties{
+						ComponentName: componentName,
+					},
+					ResourceProvisioning: portableresources.ResourceProvisioningManual,
+					Metadata: map[string]*rpv1.DaprComponentMetadataValue{
+						"config": {
+							Value: "extrasecure",
+						},
+					},
+					Resources: []*portableresources.ResourceReference{{ID: externalResourceID1}},
+					Type:      "state.redis",
+					Version:   "v1",
+					Scopes:    []string{"test-scope-1"},
+				},
+				generated: &unstructured.Unstructured{
+					Object: map[string]any{
+						"apiVersion": dapr.DaprAPIVersion,
+						"kind":       dapr.DaprKind,
+						"metadata": map[string]any{
+							"namespace":       "test-namespace",
+							"name":            "test-component",
+							"labels":          kubernetes.MakeDescriptiveDaprLabels("test-app", "some-other-name", dapr_ctrl.DaprStateStoresResourceType),
+							"resourceVersion": "1",
+						},
+						"spec": map[string]any{
+							"type":    "state.redis",
+							"version": "v1",
+							"metadata": []any{
+								map[string]any{
+									"name":  "config",
+									"value": "extrasecure",
+								},
+							},
+						},
+						"scopes": []any{"test-scope-1"},
+					},
+				},
+			},
 		}
 		for _, tc := range testset {
 			t.Run(tc.description, func(t *testing.T) {

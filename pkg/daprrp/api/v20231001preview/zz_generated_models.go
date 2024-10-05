@@ -32,6 +32,9 @@ type DaprConfigurationStoreProperties struct {
 	// A collection of references to resources associated with the configuration store
 	Resources []*ResourceReference
 
+	// The list of Dapr app-IDs this component applies to. It applies to all apps when no scopes are specified.
+	Scopes []*string
+
 	// Dapr component type which must matches the format used by Dapr Kubernetes configuration format
 	Type *string
 
@@ -114,6 +117,9 @@ type DaprConfigurationStoreResourceUpdateProperties struct {
 	// A collection of references to resources associated with the configuration store
 	Resources []*ResourceReference
 
+	// The list of Dapr app-IDs this component applies to. It applies to all apps when no scopes are specified.
+	Scopes []*string
+
 	// Dapr component type which must matches the format used by Dapr Kubernetes configuration format
 	Type *string
 
@@ -143,6 +149,9 @@ type DaprPubSubBrokerProperties struct {
 
 	// A collection of references to resources associated with the pubSubBroker
 	Resources []*ResourceReference
+
+	// The list of Dapr app-IDs this component applies to. It applies to all apps when no scopes are specified.
+	Scopes []*string
 
 	// Dapr component type which must matches the format used by Dapr Kubernetes configuration format
 	Type *string
@@ -226,6 +235,9 @@ type DaprPubSubBrokerResourceUpdateProperties struct {
 	// A collection of references to resources associated with the pubSubBroker
 	Resources []*ResourceReference
 
+	// The list of Dapr app-IDs this component applies to. It applies to all apps when no scopes are specified.
+	Scopes []*string
+
 	// Dapr component type which must matches the format used by Dapr Kubernetes configuration format
 	Type *string
 
@@ -255,6 +267,9 @@ type DaprSecretStoreProperties struct {
 
 	// Specifies how the underlying service/resource is provisioned and managed.
 	ResourceProvisioning *ResourceProvisioning
+
+	// The list of Dapr app-IDs this component applies to. It applies to all apps when no scopes are specified.
+	Scopes []*string
 
 	// Dapr component type which must matches the format used by Dapr Kubernetes configuration format
 	Type *string
@@ -332,6 +347,9 @@ type DaprSecretStoreResourceUpdateProperties struct {
 	// Specifies how the underlying service/resource is provisioned and managed.
 	ResourceProvisioning *ResourceProvisioning
 
+	// The list of Dapr app-IDs this component applies to. It applies to all apps when no scopes are specified.
+	Scopes []*string
+
 	// Dapr component type which must matches the format used by Dapr Kubernetes configuration format
 	Type *string
 
@@ -361,6 +379,9 @@ type DaprStateStoreProperties struct {
 
 	// A collection of references to resources associated with the state store
 	Resources []*ResourceReference
+
+	// The list of Dapr app-IDs this component applies to. It applies to all apps when no scopes are specified.
+	Scopes []*string
 
 	// Dapr component type which must matches the format used by Dapr Kubernetes configuration format
 	Type *string
@@ -443,6 +464,9 @@ type DaprStateStoreResourceUpdateProperties struct {
 
 	// A collection of references to resources associated with the state store
 	Resources []*ResourceReference
+
+	// The list of Dapr app-IDs this component applies to. It applies to all apps when no scopes are specified.
+	Scopes []*string
 
 	// Dapr component type which must matches the format used by Dapr Kubernetes configuration format
 	Type *string
@@ -576,6 +600,9 @@ type MetadataValueUpdate struct {
 type NonRedundantDaprResourceProperties struct {
 	// The metadata for Dapr resource which must match the values specified in Dapr component spec
 	Metadata map[string]*MetadataValue
+
+	// The list of Dapr app-IDs this component applies to. It applies to all apps when no scopes are specified.
+	Scopes []*string
 
 	// Dapr component type which must matches the format used by Dapr Kubernetes configuration format
 	Type *string

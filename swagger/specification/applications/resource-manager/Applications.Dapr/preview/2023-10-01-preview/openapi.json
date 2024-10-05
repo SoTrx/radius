@@ -1292,6 +1292,13 @@
           "$ref": "#/definitions/DaprResourceAuth",
           "description": "The name of the Dapr component to be used as a secret store"
         },
+        "scopes": {
+          "type": "array",
+          "description": "The list of Dapr app-IDs this component applies to. It applies to all apps when no scopes are specified.",
+          "items": {
+            "type": "string"
+          }
+        },
         "resources": {
           "type": "array",
           "description": "A collection of references to resources associated with the configuration store",
@@ -1404,6 +1411,13 @@
           "$ref": "#/definitions/DaprResourceAuth",
           "description": "The name of the Dapr component to be used as a secret store"
         },
+        "scopes": {
+          "type": "array",
+          "description": "The list of Dapr app-IDs this component applies to. It applies to all apps when no scopes are specified.",
+          "items": {
+            "type": "string"
+          }
+        },
         "resources": {
           "type": "array",
           "description": "A collection of references to resources associated with the configuration store",
@@ -1466,6 +1480,13 @@
         "auth": {
           "$ref": "#/definitions/DaprResourceAuth",
           "description": "The name of the Dapr component to be used as a secret store"
+        },
+        "scopes": {
+          "type": "array",
+          "description": "The list of Dapr app-IDs this component applies to. It applies to all apps when no scopes are specified.",
+          "items": {
+            "type": "string"
+          }
         },
         "resources": {
           "type": "array",
@@ -1579,6 +1600,13 @@
           "$ref": "#/definitions/DaprResourceAuth",
           "description": "The name of the Dapr component to be used as a secret store"
         },
+        "scopes": {
+          "type": "array",
+          "description": "The list of Dapr app-IDs this component applies to. It applies to all apps when no scopes are specified.",
+          "items": {
+            "type": "string"
+          }
+        },
         "resources": {
           "type": "array",
           "description": "A collection of references to resources associated with the pubSubBroker",
@@ -1647,6 +1675,13 @@
         "version": {
           "type": "string",
           "description": "Dapr component version"
+        },
+        "scopes": {
+          "type": "array",
+          "description": "The list of Dapr app-IDs this component applies to. It applies to all apps when no scopes are specified.",
+          "items": {
+            "type": "string"
+          }
         },
         "recipe": {
           "$ref": "#/definitions/Recipe",
@@ -1749,6 +1784,13 @@
           "type": "string",
           "description": "Dapr component version"
         },
+        "scopes": {
+          "type": "array",
+          "description": "The list of Dapr app-IDs this component applies to. It applies to all apps when no scopes are specified.",
+          "items": {
+            "type": "string"
+          }
+        },
         "recipe": {
           "$ref": "#/definitions/RecipeUpdate",
           "description": "The recipe used to automatically deploy underlying infrastructure for the resource"
@@ -1804,6 +1846,13 @@
         "auth": {
           "$ref": "#/definitions/DaprResourceAuth",
           "description": "The name of the Dapr component to be used as a secret store"
+        },
+        "scopes": {
+          "type": "array",
+          "description": "The list of Dapr app-IDs this component applies to. It applies to all apps when no scopes are specified.",
+          "items": {
+            "type": "string"
+          }
         },
         "resources": {
           "type": "array",
@@ -1916,6 +1965,13 @@
         "auth": {
           "$ref": "#/definitions/DaprResourceAuth",
           "description": "The name of the Dapr component to be used as a secret store"
+        },
+        "scopes": {
+          "type": "array",
+          "description": "The list of Dapr app-IDs this component applies to. It applies to all apps when no scopes are specified.",
+          "items": {
+            "type": "string"
+          }
         },
         "resources": {
           "type": "array",
@@ -2103,6 +2159,13 @@
         "version": {
           "type": "string",
           "description": "Dapr component version"
+        },
+        "scopes": {
+          "type": "array",
+          "description": "The list of Dapr app-IDs this component applies to. It applies to all apps when no scopes are specified.",
+          "items": {
+            "type": "string"
+          }
         }
       }
     },
